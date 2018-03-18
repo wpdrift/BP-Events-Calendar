@@ -1,0 +1,303 @@
+# Copyright (C) 2017 WPDrift
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: BP Events Calendar 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/bp-events-calendar\n"
+"POT-Creation-Date: 2017-05-22 03:07:31+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+
+#: bp-events-calendar-core.php:18 bp-events-calendar-core.php:98
+#: bp-events-calendar-core.php:109 bp-events-calendar-core.php:154
+#: includes/bpec-functions.php:405
+msgid "Events"
+msgstr ""
+
+#: bp-events-calendar-core.php:119 bp-events-calendar-core.php:175
+msgid "Add Event"
+msgstr ""
+
+#: bp-events-calendar-core.php:161
+msgid "Event Lists"
+msgstr ""
+
+#: bp-events-calendar-core.php:168
+msgid "Calendar"
+msgstr ""
+
+#: includes/bpec-functions.php:111
+msgid "The requested page number was not found."
+msgstr ""
+
+#: includes/bpec-functions.php:375
+msgid "%1$s posted a new event, %2$s"
+msgstr ""
+
+#: includes/bpec-functions.php:403
+msgid "New Event"
+msgstr ""
+
+#: includes/bpec-templates.php:139 includes/bpec-templates.php:937
+msgid "View"
+msgstr ""
+
+#: includes/bpec-templates.php:145 includes/bpec-templates.php:946
+msgid "Edit"
+msgstr ""
+
+#: includes/bpec-templates.php:222
+msgid "Delete Image"
+msgstr ""
+
+#: includes/bpec-templates.php:232
+msgid "%s Title:"
+msgstr ""
+
+#: includes/bpec-templates.php:246
+msgid "%s Description:"
+msgstr ""
+
+#: includes/bpec-templates.php:267
+msgid "%s Categories:"
+msgstr ""
+
+#: includes/bpec-templates.php:293
+msgid "%s Image"
+msgstr ""
+
+#: includes/bpec-templates.php:299
+msgid "Upload:"
+msgstr ""
+
+#: includes/bpec-templates.php:311
+msgid ""
+"Images that are not png, jpg, or gif will not be uploaded. Images may not "
+"exceed %1$s in size."
+msgstr ""
+
+#: includes/bpec-templates.php:352
+msgid "%s Time &amp; Date"
+msgstr ""
+
+#: includes/bpec-templates.php:358
+msgid ""
+"You have changed the recurrence rules of this %1$s. Saving the %1$s will "
+"update all future %2$s.  If you did not mean to change all %2$s, then "
+"please refresh the page."
+msgstr ""
+
+#: includes/bpec-templates.php:363
+msgid "All day %s?"
+msgstr ""
+
+#: includes/bpec-templates.php:371
+msgid "Start Date / Time:"
+msgstr ""
+
+#: includes/bpec-templates.php:375 includes/bpec-templates.php:388
+msgid "YYYY-MM-DD"
+msgstr ""
+
+#: includes/bpec-templates.php:384
+msgid "End Date / Time:"
+msgstr ""
+
+#: includes/bpec-templates.php:398
+msgid "Timezone:"
+msgstr ""
+
+#: includes/bpec-templates.php:471 includes/bpec-templates.php:649
+msgid "%s Details"
+msgstr ""
+
+#: includes/bpec-templates.php:483
+msgid "%s Name"
+msgstr ""
+
+#: includes/bpec-templates.php:495
+msgid "Address"
+msgstr ""
+
+#: includes/bpec-templates.php:506
+msgid "City"
+msgstr ""
+
+#: includes/bpec-templates.php:516
+msgid "Country"
+msgstr ""
+
+#: includes/bpec-templates.php:542
+msgid "State or Province"
+msgstr ""
+
+#: includes/bpec-templates.php:548
+msgid "Select a State"
+msgstr ""
+
+#: includes/bpec-templates.php:562
+msgid "Postal Code"
+msgstr ""
+
+#: includes/bpec-templates.php:573
+msgid "Phone"
+msgstr ""
+
+#: includes/bpec-templates.php:584
+msgid "Website"
+msgstr ""
+
+#: includes/bpec-templates.php:600
+msgid "Show Google Map"
+msgstr ""
+
+#: includes/bpec-templates.php:613
+msgid "Show Google Maps Link"
+msgstr ""
+
+#: includes/bpec-templates.php:690
+msgid "%s Website"
+msgstr ""
+
+#: includes/bpec-templates.php:696
+msgid "URL:"
+msgstr ""
+
+#: includes/bpec-templates.php:732
+msgid "Additional Fields"
+msgstr ""
+
+#: includes/bpec-templates.php:767 includes/bpec-templates.php:796
+msgid "None"
+msgstr ""
+
+#: includes/bpec-templates.php:846
+msgid "%s Cost"
+msgstr ""
+
+#: includes/bpec-templates.php:851
+msgid "Currency Symbol:"
+msgstr ""
+
+#: includes/bpec-templates.php:876
+msgid "Cost:"
+msgstr ""
+
+#: includes/bpec-templates.php:882
+msgid "Leave blank to hide the field. Enter a 0 for %s that are free."
+msgstr ""
+
+#: includes/bpec-templates.php:983
+msgid "Yes"
+msgstr ""
+
+#: includes/bpec-templates.php:985
+msgid "No"
+msgstr ""
+
+#: includes/class-bpec-event-form.php:173
+msgid "%s updated. "
+msgstr ""
+
+#: includes/class-bpec-event-form.php:177
+msgid "There was a problem saving your %s, please try again."
+msgstr ""
+
+#: includes/class-bpec-event-form.php:193
+msgid "%s submitted."
+msgstr ""
+
+#: includes/class-bpec-event-form.php:196
+msgid "There was a problem submitting your %s, please try again."
+msgstr ""
+
+#: includes/class-bpec-event-form.php:341
+msgid "Attachment removed"
+msgstr ""
+
+#: templates/bpec-event-form.php:63
+msgid "Update %s"
+msgstr ""
+
+#: templates/bpec-event-form.php:65
+msgid "Save %s"
+msgstr ""
+
+#: templates/bpec-event-list.php:34
+msgid "There are no upcoming %s in your queue."
+msgstr ""
+
+#: templates/bpec-event-list.php:46
+msgid "View past events"
+msgstr ""
+
+#: templates/bpec-event-list.php:50
+msgid "View upcoming events"
+msgstr ""
+
+#: templates/bpec-event-list.php:65
+msgid "Status"
+msgstr ""
+
+#: templates/bpec-event-list.php:66
+msgid "Title"
+msgstr ""
+
+#: templates/bpec-event-list.php:69
+msgid "Category"
+msgstr ""
+
+#: templates/bpec-event-list.php:72
+msgid "Recurring?"
+msgstr ""
+
+#: templates/bpec-event-list.php:75
+msgid "Start Date"
+msgstr ""
+
+#: templates/bpec-event-list.php:76
+msgid "End Date"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "BP Events Calendar"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://wpdrift.com/buddypress-events-calendar"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, "
+"and allow users to post events directly from their profile to your site."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WPDrift"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wpdrift.com"
+msgstr ""
+
+#: includes/bpec-templates.php:749
+msgctxt "custom field label"
+msgid "%s:"
+msgstr ""
+
+#: includes/bpec-templates.php:867
+msgctxt "Currency symbol position"
+msgid "Before cost"
+msgstr ""
+
+#: includes/bpec-templates.php:870
+msgctxt "Currency symbol position"
+msgid "After cost"
+msgstr ""
