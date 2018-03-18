@@ -8,10 +8,10 @@ Author: WPDrift
 Author URI: http://wpdrift.com
 Requires at least: 4.4
 Tested up to: 4.7
-Text Domain: bp-events-calendar
+Text Domain: buddypress-for-events-calendar
 Domain Path: /languages/
 
-Copyright: 2017 WPDrift
+Copyright: 2018 WPDrift
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -63,7 +63,7 @@ if ( !defined( 'BP_EVENTS_CALENDAR_PLUGIN_URL' ) ) {
 // I18n
 add_action( 'plugins_loaded', 'buddypress_events_calendar_load_textdomain' );
 function buddypress_events_calendar_load_textdomain() {
-	load_plugin_textdomain( 'bp-events-calendar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'buddypress-for-events-calendar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 function bpec_init(){

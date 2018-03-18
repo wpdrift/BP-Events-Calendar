@@ -47,9 +47,6 @@ class BP_Events_Component extends BP_Component {
         require( BP_EVENTS_CALENDAR_PLUGIN_DIR .'/includes/bpec-groups-extension.php' );
         require( BP_EVENTS_CALENDAR_PLUGIN_DIR .'/includes/class-bpec-events-members.php' );
 
-		//license
-		include( BP_EVENTS_CALENDAR_PLUGIN_DIR . '/includes/bpec-updater.php' );
-
 		//Admin includes
 		if ( is_admin() ) {
 			/** settings ***************************************************/
