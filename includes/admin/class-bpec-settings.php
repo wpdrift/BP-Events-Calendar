@@ -43,28 +43,7 @@ class BPEC_Settings {
 			$account_roles[ $key ] = $role['name'];
 		}
 
-		if ( 'valid' == get_option('bpec_license_status') ) {
-			$license_desc = __( '<strong style="color: green;">Valid license</strong>, To deactivate license key, delete license key and click "Save Changes" button', 'bp-events-calendar' );
-		} else {
-			$license_desc = __( '<strong style="color: red";>Invalid license</strong>, Enter the license key from your purchase receipt.', 'bp-events-calendar');
-		}
-
-		$this->settings = apply_filters( 'bpec_settings',
-			array(
-				'license' => array(
-					__( 'License', 'bp-events-calendar' ),
-					array(
-						array(
-							'std' 		  => '',
-							'name'        => 'bpec_license_key',
-							'label'       => __( 'License Key', 'bp-events-calendar' ),
-							'desc'        => $license_desc,
-							'attributes'  => array()
-						)
-						),
-					),
-				)
-		);
+		$this->settings = apply_filters( 'bpec_settings', array() );
 	}
 
 	/**
