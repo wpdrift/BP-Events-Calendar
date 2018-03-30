@@ -400,7 +400,7 @@ function bpec_event_listing_record_post( $post_id ) {
 }
 
 /**
- * Format 'new_job_post' activity actions.
+ * Format 'new_event_post' activity actions.
  *
  * @param string $action Static activity action.
  * @param obj $activity Activity data object.

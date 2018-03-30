@@ -37,7 +37,7 @@ class BP_Events_Component extends BP_Component {
 	public function includes( $includes = array() ) {
 
 		include( BP_EVENTS_CALENDAR_PLUGIN_DIR . '/includes/class-bpec-event-form.php' );
-		
+
 		include( BP_EVENTS_CALENDAR_PLUGIN_DIR . '/includes/bpec-functions.php' );
 		include( BP_EVENTS_CALENDAR_PLUGIN_DIR . '/includes/bpec-actions.php' );
 		include( BP_EVENTS_CALENDAR_PLUGIN_DIR . '/includes/bpec-templates.php' );
@@ -214,7 +214,7 @@ class BP_Events_Component extends BP_Component {
 				'title'  => __( 'Add Event', 'bp-events-calendar' ),
 				'href'   => trailingslashit( $events_link . 'add-event' )
 			);
-			
+
 		}
 
 		parent::setup_admin_bar( $wp_admin_nav );
@@ -286,7 +286,7 @@ class BP_Events_Component extends BP_Component {
 				'tribe_venue' 		=> "venue"
 			),
 		);
-		
+
 		wp_localize_script( 'tribe-events-admin', 'tribe_events_linked_posts', $data );
 
 		//Event list page styles and scripts
@@ -372,7 +372,7 @@ class BP_Events_Component extends BP_Component {
 			apply_filters('wpdrift_panel_menu_page_capability', current_user_can( 'manage_options' )) && add_menu_page( 'wpdrift_panel', 'WP Drift', 'manage_options', 'wpdrift_panel', NULL, '', $position );
 		}
 
-		add_submenu_page( 'wpdrift_panel', __( 'BP Events Calendar', 'wp-job-manager' ), __( 'BP Events Calendar', 'wp-job-manager' ), 'manage_options', 'bp-events-calendar-settings', array( $this->settings_page, 'output' ) );
+		add_submenu_page( 'wpdrift_panel', __( 'BP Events Calendar', 'bp-events-calendar' ), __( 'BP Events Calendar', 'bp-events-calendar' ), 'manage_options', 'bp-events-calendar-settings', array( $this->settings_page, 'output' ) );
 		remove_submenu_page( 'wpdrift_panel', 'wpdrift_panel' ); //Need to remove submenu "wpdrift_panel" created from parent add_menu_page
 	}
 }
