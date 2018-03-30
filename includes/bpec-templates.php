@@ -1574,7 +1574,7 @@ function bpec_event_guests() {
             <a href="#guests-popup" class="bpec-guests-popup-btn" data-eid="<?php echo $post->ID ?>" data-gid="<?php echo $groups_template->group->id ?>" data-_wpnonce="<?php echo wp_create_nonce('guests_list') ?>"><?php printf( _n( '%1$s Guest', '%1$s Guests', $count, 'bp-events-calendar' ), $count ); ?></a>
         </span>
     </div>
-    <?
+    <?php
 }
 
 /**
