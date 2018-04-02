@@ -14,7 +14,7 @@ class BP_Events_Component extends BP_Component {
 	public function __construct() {
 		parent::start(
 			'events',
-			__( 'Events', 'bp-events-calendar' ),
+			__( 'Events', 'buddypress-for-events-calendar' ),
 			plugin_dir_path( __FILE__ ),
 			array(
 				'adminbar_myaccount_order' => 100
@@ -114,7 +114,7 @@ class BP_Events_Component extends BP_Component {
 		}
 
 		$main_nav = array(
-			'name'                    => __( 'Events', 'bp-events-calendar' ),
+			'name'                    => __( 'Events', 'buddypress-for-events-calendar' ),
 			'slug'                    => $this->slug,
 			'position'                => 100,
 			'show_for_displayed_user' => bp_core_can_edit_settings(),
@@ -125,7 +125,7 @@ class BP_Events_Component extends BP_Component {
 		$events_link = trailingslashit( $user_domain . $this->slug );
 
 		$sub_nav[] = array(
-			'name'            => __( 'Events', 'bp-events-calendar' ),
+			'name'            => __( 'Events', 'buddypress-for-events-calendar' ),
 			'slug'            => 'event-lists',
 			'parent_url'      => $events_link,
 			'parent_slug'     => $this->slug,
@@ -134,7 +134,7 @@ class BP_Events_Component extends BP_Component {
 		);
 
 		$sub_nav[] = array(
-			'name'            => __( 'Add Event', 'bp-events-calendar' ),
+			'name'            => __( 'Add Event', 'buddypress-for-events-calendar' ),
 			'slug'            => 'add-event',
 			'parent_url'      => $events_link,
 			'parent_slug'     => $this->slug,
@@ -144,7 +144,7 @@ class BP_Events_Component extends BP_Component {
 
 		if ( bp_is_current_component($this->slug) && bp_is_current_action('attendees') && bp_action_variable(0) ) {
             $sub_nav[] = array(
-                'name'            => __( 'Attendees', 'bp-events-calendar' ),
+                'name'            => __( 'Attendees', 'buddypress-for-events-calendar' ),
                 'slug'            => 'attendees',
                 'parent_url'      => $events_link,
                 'parent_slug'     => $this->slug,
@@ -155,7 +155,7 @@ class BP_Events_Component extends BP_Component {
 
         if ( bp_is_current_component($this->slug) && bp_is_current_action('orders') && bp_action_variable(0) ) {
             $sub_nav[] = array(
-                'name'            => __( 'Orders', 'bp-events-calendar' ),
+                'name'            => __( 'Orders', 'buddypress-for-events-calendar' ),
                 'slug'            => 'orders',
                 'parent_url'      => $events_link,
                 'parent_slug'     => $this->slug,
@@ -190,28 +190,28 @@ class BP_Events_Component extends BP_Component {
 			$wp_admin_nav[] = array(
 				'parent' => $bp->my_account_menu_id,
 				'id'     => 'my-account-' . $this->id,
-				'title'  => __( 'Events', 'bp-events-calendar' ),
+				'title'  => __( 'Events', 'buddypress-for-events-calendar' ),
 				'href'   => trailingslashit( $events_link )
 			);
 
 			$wp_admin_nav[] = array(
 				'parent' => 'my-account-' . $this->id,
 				'id'     => 'my-account-' . $this->id . '-event-lists',
-				'title'  => __( 'Event Lists', 'bp-events-calendar' ),
+				'title'  => __( 'Event Lists', 'buddypress-for-events-calendar' ),
 				'href'   => trailingslashit( $events_link . 'event-lists' )
 			);
 
 			$wp_admin_nav[] = array(
 				'parent' => 'my-account-' . $this->id,
 				'id'     => 'my-account-' . $this->id . '-calendar',
-				'title'  => __( 'Calendar', 'bp-events-calendar' ),
+				'title'  => __( 'Calendar', 'buddypress-for-events-calendar' ),
 				'href'   => trailingslashit( $events_url )
 			);
 
 			$wp_admin_nav[] = array(
 				'parent' => 'my-account-' . $this->id,
 				'id'     => 'my-account-' . $this->id . '-add-event',
-				'title'  => __( 'Add Event', 'bp-events-calendar' ),
+				'title'  => __( 'Add Event', 'buddypress-for-events-calendar' ),
 				'href'   => trailingslashit( $events_link . 'add-event' )
 			);
 
@@ -307,17 +307,17 @@ class BP_Events_Component extends BP_Component {
             wp_enqueue_script( 'tickets-attendees', $resources_url . '/js/tickets-attendees.js', array( 'jquery' ), Tribe__Tickets__Main::instance()->js_version() );
 
 			wp_localize_script( 'event-tickets', 'tribe_ticket_notices', array(
-				'confirm_alert' => __( 'Are you sure you want to delete this ticket? This cannot be undone.', 'bp-events-calendar' ),
+				'confirm_alert' => __( 'Are you sure you want to delete this ticket? This cannot be undone.', 'buddypress-for-events-calendar' ),
 			) );
 
 			$upload_header_data = array(
-				'title'  => esc_html__( 'Ticket header image', 'bp-events-calendar' ),
-				'button' => esc_html__( 'Set as ticket header', 'bp-events-calendar' ),
+				'title'  => esc_html__( 'Ticket header image', 'buddypress-for-events-calendar' ),
+				'button' => esc_html__( 'Set as ticket header', 'buddypress-for-events-calendar' ),
 			);
 
 			wp_localize_script( 'event-tickets', 'HeaderImageData', $upload_header_data );
 			wp_localize_script( 'event-tickets', 'tribe_global_stock_admin_ui', array(
-				'nav_away_msg' => __( 'It looks like you have modified your global stock settings but have not saved or updated the post.', 'bp-events-calendar' ),
+				'nav_away_msg' => __( 'It looks like you have modified your global stock settings but have not saved or updated the post.', 'buddypress-for-events-calendar' ),
 			) );
 
 			$nonces = array(
@@ -330,11 +330,11 @@ class BP_Events_Component extends BP_Component {
 
             $mail_data = array(
                 'nonce'           => wp_create_nonce( 'email-attendee-list' ),
-                'required'        => esc_html__( 'You need to select a user or type a valid email address', 'bp-events-calendar' ),
-                'sending'         => esc_html__( 'Sending...', 'bp-events-calendar' ),
+                'required'        => esc_html__( 'You need to select a user or type a valid email address', 'buddypress-for-events-calendar' ),
+                'sending'         => esc_html__( 'Sending...', 'buddypress-for-events-calendar' ),
                 'checkin_nonce'   => wp_create_nonce( 'checkin' ),
                 'uncheckin_nonce' => wp_create_nonce( 'uncheckin' ),
-                'cannot_move'     => esc_html__( 'You must first select one or more tickets before you can move them!', 'bp-events-calendar' ),
+                'cannot_move'     => esc_html__( 'You must first select one or more tickets before you can move them!', 'buddypress-for-events-calendar' ),
                 'move_url'        => add_query_arg( array(
                     'dialog'    => Tribe__Tickets__Main::instance()->move_tickets()->dialog_name(),
                     'check'     => wp_create_nonce( 'move_tickets' ),
@@ -348,11 +348,11 @@ class BP_Events_Component extends BP_Component {
 		}
 
         wp_localize_script( 'bpec-main', 'bpec_global_vars', apply_filters( 'bpec_global_vars', array(
-            'join' => __( 'Join', 'bp-events-calendar' ),
-            'going' => __( 'Going', 'bp-events-calendar' ),
-            'not_going'      => __( 'Not Going', 'bp-events-calendar' ),
-            'interested' => __( 'Interested', 'bp-events-calendar' ),
-            'not_interested' => __( 'Not Interested', 'bp-events-calendar' ),
+            'join' => __( 'Join', 'buddypress-for-events-calendar' ),
+            'going' => __( 'Going', 'buddypress-for-events-calendar' ),
+            'not_going'      => __( 'Not Going', 'buddypress-for-events-calendar' ),
+            'interested' => __( 'Interested', 'buddypress-for-events-calendar' ),
+            'not_interested' => __( 'Not Interested', 'buddypress-for-events-calendar' ),
         ) ) );
 
     }
@@ -372,7 +372,7 @@ class BP_Events_Component extends BP_Component {
 			apply_filters('wpdrift_panel_menu_page_capability', current_user_can( 'manage_options' )) && add_menu_page( 'wpdrift_panel', 'WP Drift', 'manage_options', 'wpdrift_panel', NULL, '', $position );
 		}
 
-		add_submenu_page( 'wpdrift_panel', __( 'BP Events Calendar', 'bp-events-calendar' ), __( 'BP Events Calendar', 'bp-events-calendar' ), 'manage_options', 'bp-events-calendar-settings', array( $this->settings_page, 'output' ) );
+		add_submenu_page( 'wpdrift_panel', __( 'BP Events Calendar', 'buddypress-for-events-calendar' ), __( 'BP Events Calendar', 'buddypress-for-events-calendar' ), 'manage_options', 'bp-events-calendar-settings', array( $this->settings_page, 'output' ) );
 		remove_submenu_page( 'wpdrift_panel', 'wpdrift_panel' ); //Need to remove submenu "wpdrift_panel" created from parent add_menu_page
 	}
 }
