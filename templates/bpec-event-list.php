@@ -15,6 +15,8 @@ $venue_label_singular           = tribe_get_venue_label_singular();
 $events_label_plural            = tribe_get_event_label_plural();
 $events_label_plural_lowercase  = tribe_get_event_label_plural_lowercase();
 
+$eventDisplay = isset($_GET['eventDisplay']) ? $_GET['eventDisplay'] : '';
+
 ?>
 <div class="bp-events event-list">
 <?php
@@ -29,7 +31,11 @@ $current_user = wp_get_current_user(); ?>
 <?php // list pagination
 
 if ( ! $my_events->have_posts() ) {
-	echo ( sprintf( __( 'There are no upcoming %s in your queue.', 'bp-events-calendar' ), $events_label_plural_lowercase ) );
+	if ( empty( $eventDisplay ) || 'past' !== $eventDisplay ) {
+		echo ( sprintf( __( 'There are no upcoming %s in your queue.', 'bp-events-calendar' ), $events_label_plural_lowercase ) );
+	} else {
+		echo ( sprintf( __( 'There are no past %s in your queue.', 'bp-events-calendar' ), $events_label_plural_lowercase ) );
+	}
 } ?>
 
 
@@ -39,7 +45,7 @@ if ( ! $my_events->have_posts() ) {
 	$link = get_pagenum_link( 1 );
 	$link = remove_query_arg( 'eventDisplay', $link );
 
-	if ( empty( $_GET['eventDisplay'] ) || 'past' !== $_GET['eventDisplay'] ) {
+	if ( empty( $eventDisplay ) || 'past' !== $eventDisplay ) {
 		?>
 		<a href="<?php echo esc_url( $link . '?eventDisplay=past' ); ?>"><?php echo esc_html__( 'View past events', 'bp-events-calendar' ); ?></a>
 		<?php
