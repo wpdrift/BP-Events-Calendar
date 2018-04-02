@@ -32,9 +32,9 @@ $current_user = wp_get_current_user(); ?>
 
 if ( ! $my_events->have_posts() ) {
 	if ( empty( $eventDisplay ) || 'past' !== $eventDisplay ) {
-		echo ( sprintf( __( 'There are no upcoming %s in your queue.', 'bp-events-calendar' ), $events_label_plural_lowercase ) );
+		echo ( sprintf( __( 'There are no upcoming %s in your queue.', 'buddypress-for-events-calendar' ), $events_label_plural_lowercase ) );
 	} else {
-		echo ( sprintf( __( 'There are no past %s in your queue.', 'bp-events-calendar' ), $events_label_plural_lowercase ) );
+		echo ( sprintf( __( 'There are no past %s in your queue.', 'buddypress-for-events-calendar' ), $events_label_plural_lowercase ) );
 	}
 } ?>
 
@@ -47,11 +47,11 @@ if ( ! $my_events->have_posts() ) {
 
 	if ( empty( $eventDisplay ) || 'past' !== $eventDisplay ) {
 		?>
-		<a href="<?php echo esc_url( $link . '?eventDisplay=past' ); ?>"><?php echo esc_html__( 'View past events', 'bp-events-calendar' ); ?></a>
+		<a href="<?php echo esc_url( $link . '?eventDisplay=past' ); ?>"><?php echo esc_html__( 'View past events', 'buddypress-for-events-calendar' ); ?></a>
 		<?php
 	} else {
 		?>
-		<a href="<?php echo esc_url( $link . '?eventDisplay=list' ); ?>"><?php echo esc_html__( 'View upcoming events', 'bp-events-calendar' ); ?></a>
+		<a href="<?php echo esc_url( $link . '?eventDisplay=list' ); ?>"><?php echo esc_html__( 'View upcoming events', 'buddypress-for-events-calendar' ); ?></a>
 		<?php
 	}
 	?>
@@ -66,18 +66,18 @@ if ( $my_events->have_posts() ) {
 		<table class="events-community my-events" cellspacing="0" cellpadding="4">
 			<thead id="my-events-display-headers">
 				<tr>
-					<th class="essential persist"><?php esc_html_e( 'Status', 'bp-events-calendar' ); ?></th>
-					<th class="essential persist"><?php esc_html_e( 'Title', 'bp-events-calendar' ); ?></th>
-					<th class="essential"><?php _e( $organizer_label_singular, 'bp-events-calendar' ); ?></th>
-					<th class="essential"><?php _e( $venue_label_singular, 'bp-events-calendar' ); ?></th>
-					<th class="optional1"><?php esc_html_e( 'Category', 'bp-events-calendar' ); ?></th>
+					<th class="essential persist"><?php esc_html_e( 'Status', 'buddypress-for-events-calendar' ); ?></th>
+					<th class="essential persist"><?php esc_html_e( 'Title', 'buddypress-for-events-calendar' ); ?></th>
+					<th class="essential"><?php _e( $organizer_label_singular, 'buddypress-for-events-calendar' ); ?></th>
+					<th class="essential"><?php _e( $venue_label_singular, 'buddypress-for-events-calendar' ); ?></th>
+					<th class="optional1"><?php esc_html_e( 'Category', 'buddypress-for-events-calendar' ); ?></th>
 					<?php
 					if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
-						echo '<th class="optional2">' . esc_html__( 'Recurring?', 'bp-events-calendar' ) . '</th>';
+						echo '<th class="optional2">' . esc_html__( 'Recurring?', 'buddypress-for-events-calendar' ) . '</th>';
 					}
 					?>
-					<th class="essential"><?php esc_html_e( 'Start Date', 'bp-events-calendar' ); ?></th>
-					<th class="essential"><?php esc_html_e( 'End Date', 'bp-events-calendar' ); ?></th>
+					<th class="essential"><?php esc_html_e( 'Start Date', 'buddypress-for-events-calendar' ); ?></th>
+					<th class="essential"><?php esc_html_e( 'End Date', 'buddypress-for-events-calendar' ); ?></th>
 				</tr>
 			</thead><!-- #my-events-display-headers -->
 

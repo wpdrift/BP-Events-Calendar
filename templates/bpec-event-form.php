@@ -34,7 +34,7 @@ do_action( 'bpec_before_event_form' ); ?>
 	<input type="hidden" name="post_ID" id="post_ID" value="<?php echo absint( $tribe_event_id ); ?>"/>
 
 	<?php wp_nonce_field( 'bpec_event_submission' ); ?>
-	
+
 	<?php
 	/**
 	 * bpec_event_form hook.
@@ -55,19 +55,19 @@ do_action( 'bpec_before_event_form' ); ?>
 
 	<!-- Form Submit -->
 	<?php do_action( 'tribe_events_community_before_form_submit' ); ?>
-	
+
 	<div class="buddypress-events-calendar-footer">
 		<input type="submit" id="post" class="button submit events-community-submit" value="<?php
 
 			if ( isset( $tribe_event_id ) && $tribe_event_id ) {
-				echo apply_filters( 'tribe_ce_event_update_button_text', sprintf( __( 'Update %s', 'bp-events-calendar' ), $events_label_singular ) );
+				echo apply_filters( 'tribe_ce_event_update_button_text', sprintf( __( 'Update %s', 'buddypress-for-events-calendar' ), $events_label_singular ) );
 			} else {
-				echo apply_filters( 'tribe_ce_event_submit_button_text', sprintf( __( 'Save %s', 'bp-events-calendar' ), $events_label_singular ) );
+				echo apply_filters( 'tribe_ce_event_submit_button_text', sprintf( __( 'Save %s', 'buddypress-for-events-calendar' ), $events_label_singular ) );
 			}
 
 			?>" name="community-event" />
 	</div><!-- .tribe-events-community-footer -->
-	
+
 	<?php do_action( 'tribe_events_community_after_form_submit' ); ?>
 
 </form>
