@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: BuddyPress for Events Calendar
-Plugin URI: http://wpdrift.com/bp-events-calendar
-Description: The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, and allow users to post events directly from their profile to your site.
+Plugin URI: https://wpdrift.com/buddypress-for-events-calendar/
+Description: The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, and allow users to post events directly from their profile.
 Version: 1.0.0
-Author: WPDrift
-Author URI: http://wpdrift.com
+Author: WPdrift
+Author URI: https://wpdrift.com
 Requires at least: 4.4
 Tested up to: 4.7
 Text Domain: buddypress-for-events-calendar
 Domain Path: /languages/
 
-Copyright: 2018 WPDrift
+Copyright: 2018 WPdrift
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -22,7 +22,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @package BPEC
  * @category Core
- * @author WPDrift
+ * @author WPdrift
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
