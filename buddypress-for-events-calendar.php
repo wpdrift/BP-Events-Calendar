@@ -89,7 +89,6 @@ function bpec_install_db_tables() {
 
 	dbDelta( $sql );
 }
-
 register_activation_hook( __FILE__, 'bpec_install_db_tables' );
 
 // I18n
@@ -98,8 +97,34 @@ function buddypress_events_calendar_load_textdomain() {
 	load_plugin_textdomain( 'buddypress-for-events-calendar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
-function bpec_init(){
-    include 'bp-events-calendar-core.php';
+/**
+ * Show required plugin notice.
+ */
+function bpec_required_plugins_notice() {
+	$required_plugins = array();
+
+	if ( !is_plugin_active( 'buddypress/bp-loader.php' ) ) {
+		$required_plugins[] = '<a href="https://wordpress.org/plugins/buddypress/" target="_blank">BuddyPress</a>';
+	}
+
+	if ( !is_plugin_active( 'the-events-calendar/the-events-calendar.php' ) ) {
+		$required_plugins[] = '<a href="https://wordpress.org/plugins/the-events-calendar/" target="_blank">The Events Calendar</a>';
+	}
+
+	if ( !$required_plugins ) {
+		return;
+	}
+
+	$notice = sprintf( esc_html__( 'BuddyPress for Events Calendar requires you to install %s.', 'buddypress-for-events-calendar' ), implode( ', ', $required_plugins ) );
+
+	echo '<div class="error"><p>' . $notice . '</p></div>';
+}
+add_action( 'admin_notices', 'bpec_required_plugins_notice' );
+
+function bpec_init() {
+	if ( class_exists( 'Tribe__Events__Main' ) ) {
+	    include 'bp-events-calendar-core.php';
+	}
 }
 
 add_action( 'bp_include', 'bpec_init' );
