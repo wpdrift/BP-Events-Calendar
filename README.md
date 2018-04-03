@@ -1,11 +1,11 @@
 # BuddyPress for Events Calendar #
-**Contributors:** [WPdrift](https://profiles.wordpress.org/WPdrift), [upnrunn](https://profiles.wordpress.org/upnrunn), [Kishores](https://profiles.wordpress.org/kishores), [shamimmoeen](https://profiles.wordpress.org/shamimmoeen)
-**Tags:** buddypress, events, calendar, events-calendar, community-events
-**Requires at least:** 4.0
-**Tested up to:** 4.9.4
-**Stable tag:** 1.0.0
-**Requires PHP:** 5.4
-**License:** GPLv3
+**Contributors:** [WPdrift](https://profiles.wordpress.org/WPdrift), [upnrunn](https://profiles.wordpress.org/upnrunn), [Kishores](https://profiles.wordpress.org/kishores), [shamimmoeen](https://profiles.wordpress.org/shamimmoeen)\
+**Tags:** buddypress, events, calendar, events-calendar, community-events\
+**Requires at least:** 4.0\
+**Tested up to:** 4.9.4\
+**Stable tag:** 1.0.0\
+**Requires PHP:** 5.4\
+**License:** GPLv3\
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.html
 
 The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, and allow users to post events directly from their profile.
