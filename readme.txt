@@ -1,9 +1,8 @@
 === BuddyPress for Events Calendar ===
 Contributors: WPdrift, upnrunn, Kishores, shamimmoeen
-Donate link:
 Tags: buddypress, events, calendar, events-calendar, community-events
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 4.9.4
 Stable tag: 1.0.0
 Requires PHP: 5.4
 License: GPLv3
@@ -45,11 +44,9 @@ In the search field type “BuddyPress for Events Calendar” and click Search P
 
 The manual installation method involves downloading the plugin and uploading it to your web server via your favorite FTP application.
 
-<ul>
-<li>Download the plugin file to your computer and unzip it</li>
-<li>Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installation’s <code>wp-content/plugins/</code> directory.</li>
-<li>Activate the plugin from the Plugins menu within the WordPress admin.</li>
-</ul>
+* Download the plugin file to your computer and unzip it
+* Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installation’s <code>wp-content/plugins/</code> directory.
+* Activate the plugin from the Plugins menu within the WordPress admin
 
 == Frequently Asked Questions ==
 
