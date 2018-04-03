@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: BuddyPress for Events Calendar
-Plugin URI: http://wpdrift.com/bp-events-calendar
-Description: The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, and allow users to post events directly from their profile to your site.
+Plugin URI: https://wpdrift.com/buddypress-for-events-calendar/
+Description: The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, and allow users to post events directly from their profile.
 Version: 1.0.0
 Author: WPDrift
-Author URI: http://wpdrift.com
+Author URI: https://wpdrift.com
 Requires at least: 4.4
 Tested up to: 4.7
 Text Domain: buddypress-for-events-calendar
