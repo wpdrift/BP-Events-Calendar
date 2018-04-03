@@ -61,7 +61,7 @@ The manual installation method involves downloading the plugin and uploading it 
 ### 1.0.0 ###
 * First Release
 
-### Upgrade Notice ###
+## Upgrade Notice ##
 
-= 1.0.0 =
+### 1.0.0 ###
 * First Release
