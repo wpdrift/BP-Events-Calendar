@@ -1,5 +1,5 @@
 === BuddyPress for Events Calendar ===
-Contributors: WPdrift, upnrunn, Kishores, shamimmoeen
+Contributors: WPdrift, upnrunn, kishores, shamimmoeen
 Tags: buddypress, events, calendar, events-calendar, community-events
 Requires at least: 4.0
 Tested up to: 4.9.4

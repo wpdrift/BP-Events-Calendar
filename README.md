@@ -1,5 +1,5 @@
 # BuddyPress for Events Calendar #
-**Contributors:** [WPdrift](https://profiles.wordpress.org/WPdrift), [upnrunn](https://profiles.wordpress.org/upnrunn), [Kishores](https://profiles.wordpress.org/kishores), [shamimmoeen](https://profiles.wordpress.org/shamimmoeen)\
+**Contributors:** [WPdrift](https://profiles.wordpress.org/wpdrift), [upnrunn](https://profiles.wordpress.org/upnrunn), [Kishores](https://profiles.wordpress.org/kishores), [Mainul Hassan Main](https://profiles.wordpress.org/shamimmoeen)\
 **Tags:** buddypress, events, calendar, events-calendar, community-events\
 **Requires at least:** 4.0\
 **Tested up to:** 4.9.4\
