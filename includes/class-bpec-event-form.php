@@ -171,11 +171,11 @@ class BPEC_Event_Form {
 			$saved = Tribe__Events__API::updateEvent( $this->event_id, $this->posted_data );
 
 			if ( $saved ) {
-				bp_core_add_message( sprintf( __( '%s updated. ', 'buddypress-for-events-calendar' ), $events_label_singular ) . bpec_get_actions_link( $this->event_id ) );
+				bp_core_add_message( sprintf( __( '%s updated. ', 'bp-events-calendar' ), $events_label_singular ) . bpec_get_actions_link( $this->event_id ) );
 				do_action( 'tribe_community_event_updated', $this->event_id );
 
 			} else {
-				bp_core_add_message( sprintf( __( 'There was a problem saving your %s, please try again.', 'buddypress-for-events-calendar' ), $events_label_singular_lowercase ), 'error' );
+				bp_core_add_message( sprintf( __( 'There was a problem saving your %s, please try again.', 'bp-events-calendar' ), $events_label_singular_lowercase ), 'error' );
 			}
 
 		} else {
@@ -191,10 +191,10 @@ class BPEC_Event_Form {
 
 			if ( $saved ) {
 				$this->event_id = $saved;
-				bp_core_add_message( sprintf( __( '%s submitted.', 'buddypress-for-events-calendar' ), $events_label_singular ) . bpec_get_actions_link( $this->event_id ) );
+				bp_core_add_message( sprintf( __( '%s submitted.', 'bp-events-calendar' ), $events_label_singular ) . bpec_get_actions_link( $this->event_id ) );
 				do_action( 'tribe_community_event_created', $this->event_id );
 			} else {
-				bp_core_add_message( sprintf( __( 'There was a problem submitting your %s, please try again.', 'buddypress-for-events-calendar' ), $events_label_singular_lowercase ), 'error' );
+				bp_core_add_message( sprintf( __( 'There was a problem submitting your %s, please try again.', 'bp-events-calendar' ), $events_label_singular_lowercase ), 'error' );
 			}
 		}
 
@@ -356,7 +356,7 @@ class BPEC_Event_Form {
 			$redirect = remove_query_arg( '_wpnonce', $redirect );
 			$redirect = remove_query_arg( 'action', $redirect );
 			wp_safe_redirect( esc_url_raw( $redirect ), 302 );
-			bp_core_add_message( __( 'Attachment removed', 'buddypress-for-events-calendar' ) );
+			bp_core_add_message( __( 'Attachment removed', 'bp-events-calendar' ) );
 			exit();
 		}
 	}

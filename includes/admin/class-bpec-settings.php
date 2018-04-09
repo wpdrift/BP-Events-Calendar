@@ -112,7 +112,7 @@ class BPEC_Settings {
 
 					if ( ! empty( $_GET['settings-updated'] ) ) {
 						flush_rewrite_rules();
-						echo '<div class="updated fade bp-events-calendar-updated"><p>' . __( 'Settings successfully saved', 'buddypress-for-events-calendar' ) . '</p></div>';
+						echo '<div class="updated fade bp-events-calendar-updated"><p>' . __( 'Settings successfully saved', 'bp-events-calendar' ) . '</p></div>';
 					}
 
 					foreach ( $this->settings as $key => $section ) {
@@ -172,12 +172,12 @@ class BPEC_Settings {
 										'id'               => $option['name'],
 										'sort_column'      => 'menu_order',
 										'sort_order'       => 'ASC',
-										'show_option_none' => __( '--no page--', 'buddypress-for-events-calendar' ),
+										'show_option_none' => __( '--no page--', 'bp-events-calendar' ),
 										'echo'             => false,
 										'selected'         => absint( $value )
 									);
 
-									echo str_replace(' id=', " data-placeholder='" . __( 'Select a page&hellip;', 'buddypress-for-events-calendar' ) .  "' id=", wp_dropdown_pages( $args ) );
+									echo str_replace(' id=', " data-placeholder='" . __( 'Select a page&hellip;', 'bp-events-calendar' ) .  "' id=", wp_dropdown_pages( $args ) );
 
 									if ( $option['desc'] ) {
 										echo ' <p class="description">' . $option['desc'] . '</p>';
@@ -223,7 +223,7 @@ class BPEC_Settings {
 					}
 				?>
 				<p class="submit">
-					<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'buddypress-for-events-calendar' ); ?>" />
+					<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'bp-events-calendar' ); ?>" />
 				</p>
 		    </form>
 		</div>

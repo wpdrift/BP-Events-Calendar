@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: BuddyPress for Events Calendar
+Plugin Name: BP Events Calendar
 Plugin URI: https://wpdrift.com/buddypress-for-events-calendar/
 Description: The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, and allow users to post events directly from their profile.
 Version: 1.0.0
@@ -8,7 +8,7 @@ Author: WPdrift
 Author URI: https://wpdrift.com
 Requires at least: 4.4
 Tested up to: 4.7
-Text Domain: buddypress-for-events-calendar
+Text Domain: bp-events-calendar
 Domain Path: /languages/
 
 Copyright: 2018 WPdrift
@@ -94,7 +94,7 @@ register_activation_hook( __FILE__, 'bpec_install_db_tables' );
 // I18n
 add_action( 'plugins_loaded', 'buddypress_events_calendar_load_textdomain' );
 function buddypress_events_calendar_load_textdomain() {
-	load_plugin_textdomain( 'buddypress-for-events-calendar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'bp-events-calendar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 /**
@@ -115,7 +115,7 @@ function bpec_required_plugins_notice() {
 		return;
 	}
 
-	$notice = sprintf( esc_html__( 'BuddyPress for Events Calendar requires you to install %s.', 'buddypress-for-events-calendar' ), implode( ', ', $required_plugins ) );
+	$notice = sprintf( esc_html__( 'BuddyPress for Events Calendar requires you to install %s.', 'bp-events-calendar' ), implode( ', ', $required_plugins ) );
 
 	echo '<div class="error"><p>' . $notice . '</p></div>';
 }

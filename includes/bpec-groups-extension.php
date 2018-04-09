@@ -14,7 +14,7 @@ if ( bp_is_active( 'groups' ) ) :
 
             $args = apply_filters( 'bpec_group_extension_config', array(
                 'slug' => 'events',
-                'name' => __( 'Events', 'buddypress-for-events-calendar' ),
+                'name' => __( 'Events', 'bp-events-calendar' ),
                 'nav_item_position' => 10,
             ) );
 

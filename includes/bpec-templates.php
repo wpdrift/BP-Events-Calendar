@@ -139,13 +139,13 @@ function bpec_get_actions_link() {
     if ( get_post_status( $event_form->event_id ) == 'publish' ) {
         $view_link = sprintf( '<a href="%s" class="view-event">%s</a>',
             esc_url( get_permalink( $event_form->event_id ) ),
-            __( 'View', 'buddypress-for-events-calendar' ) );
+            __( 'View', 'bp-events-calendar' ) );
     }
 
     if ( current_user_can( 'edit_post', $event_form->event_id ) ) {
         $edit_link = sprintf( '<a href="%s" class="edit-event">%s</a>',
             esc_url( $bp->displayed_user->domain . 'events/add-event/' . $event_form->event_id ),
-            __( 'Edit', 'buddypress-for-events-calendar' )
+            __( 'Edit', 'bp-events-calendar' )
         );
     }
 
@@ -232,7 +232,7 @@ function bpec_template_title() { ?>
 
     <!-- Event Title -->
     <div class="events-community-post-title">
-        <?php bpec_field_label( 'post_title', sprintf( __( '%s Title:', 'buddypress-for-events-calendar' ), tribe_get_event_label_singular() ) ); ?>
+        <?php bpec_field_label( 'post_title', sprintf( __( '%s Title:', 'bp-events-calendar' ), tribe_get_event_label_singular() ) ); ?>
         <?php bpec_event_title_field() ?>
     </div><!-- .events-community-post-title -->
     <?php
@@ -246,7 +246,7 @@ function bpec_template_description() { ?>
     <!-- Event Description -->
 	<?php do_action( 'tribe_events_community_before_the_content' ); ?>
     <div class="events-community-post-content">
-        <?php bpec_field_label( 'post_content', sprintf( __( '%s Description:', 'buddypress-for-events-calendar' ), tribe_get_event_label_singular() ) ); ?>
+        <?php bpec_field_label( 'post_content', sprintf( __( '%s Description:', 'bp-events-calendar' ), tribe_get_event_label_singular() ) ); ?>
         <?php bpec_event_description_field(); ?>
     </div><!-- .tribe-events-community-post-content --><?php
 }
@@ -269,7 +269,7 @@ function bpec_template_taxonomy() {
             <table class="tribe-community-event-info" cellspacing="0" cellpadding="0">
                 <tr>
                     <td class="tribe_sectionheader">
-                        <h4 class="event-time"><?php printf( __( '%s Categories', 'buddypress-for-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
+                        <h4 class="event-time"><?php printf( __( '%s Categories', 'bp-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
                     </td>
                 </tr>
                 <tr>
@@ -310,13 +310,13 @@ function bpec_template_image() {
         <table class="tribe-community-event-info" cellspacing="0" cellpadding="0">
             <tr>
                 <td colspan="2" class="tribe_sectionheader">
-                    <h4 class="event-time"><?php printf( esc_html__( '%s Image', 'buddypress-for-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
+                    <h4 class="event-time"><?php printf( esc_html__( '%s Image', 'bp-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="EventImage" class="x">
-                        <?php bpec_field_label( 'event_image', __( 'Upload:', 'buddypress-for-events-calendar' ) ); ?>
+                        <?php bpec_field_label( 'event_image', __( 'Upload:', 'bp-events-calendar' ) ); ?>
                     </label>
                 </td>
                 <td>
@@ -328,7 +328,7 @@ function bpec_template_image() {
                     <?php }	?>
 
                     <input type="file" name="event_image" id="EventImage">
-                    <small class="note"><?php echo esc_html( sprintf( __( 'Images that are not png, jpg, or gif will not be uploaded. Images may not exceed %1$s in size.', 'buddypress-for-events-calendar' ), $size_format ) ); ?></small>
+                    <small class="note"><?php echo esc_html( sprintf( __( 'Images that are not png, jpg, or gif will not be uploaded. Images may not exceed %1$s in size.', 'bp-events-calendar' ), $size_format ) ); ?></small>
                 </td>
             </tr>
         </table><!-- .tribe-community-event-info -->
@@ -369,18 +369,18 @@ function bpec_template_datepickers() {
 
             <tr>
                 <td colspan="2" class="tribe_sectionheader">
-                    <h4 class="event-time"><?php printf( __( '%s Time &amp; Date', 'buddypress-for-events-calendar' ), $events_label_singular ); ?></h4>
+                    <h4 class="event-time"><?php printf( __( '%s Time &amp; Date', 'bp-events-calendar' ), $events_label_singular ); ?></h4>
                 </td><!-- .tribe_sectionheader -->
             </tr>
 
             <tr id="recurrence-changed-row">
                 <td colspan="2">
-                    <?php printf( __( 'You have changed the recurrence rules of this %1$s. Saving the %1$s will update all future %2$s.  If you did not mean to change all %2$s, then please refresh the page.', 'buddypress-for-events-calendar' ), $events_label_singular_lowercase, $events_label_plural_lowercase ); ?>
+                    <?php printf( __( 'You have changed the recurrence rules of this %1$s. Saving the %1$s will update all future %2$s.  If you did not mean to change all %2$s, then please refresh the page.', 'bp-events-calendar' ), $events_label_singular_lowercase, $events_label_plural_lowercase ); ?>
                 </td>
             </tr><!-- #recurrence-changed-row -->
 
             <tr>
-                <td><?php printf( __( 'All day %s?', 'buddypress-for-events-calendar' ), $events_label_singular_lowercase ); ?></td>
+                <td><?php printf( __( 'All day %s?', 'bp-events-calendar' ), $events_label_singular_lowercase ); ?></td>
                 <td>
                     <input type="checkbox" id="allDayCheckbox" name="EventAllDay" value="yes" <?php echo ( $all_day ) ? 'checked' : ''; ?> />
                 </td>
@@ -388,11 +388,11 @@ function bpec_template_datepickers() {
 
             <tr id="tribe-event-datepickers" data-startofweek="<?php echo esc_attr( get_option( 'start_of_week' ) ); ?>">
                 <td>
-                    <?php bpec_field_label( 'EventStartDate', __( 'Start Date / Time:', 'buddypress-for-events-calendar' ) ); ?>
+                    <?php bpec_field_label( 'EventStartDate', __( 'Start Date / Time:', 'bp-events-calendar' ) ); ?>
                 </td>
                 <td>
                     <input autocomplete="off" type="text" id="EventStartDate" class="tribe-datepicker" name="EventStartDate"  value="<?php echo esc_attr( $start_date ); ?>" />
-                    <span class="helper-text hide-if-js"><?php esc_html_e( 'YYYY-MM-DD', 'buddypress-for-events-calendar' ); ?></span>
+                    <span class="helper-text hide-if-js"><?php esc_html_e( 'YYYY-MM-DD', 'bp-events-calendar' ); ?></span>
 			<span class="timeofdayoptions">
 				@ <?php bpec_event_start_time_selector(); ?>
 			</span><!-- .timeofdayoptions -->
@@ -401,11 +401,11 @@ function bpec_template_datepickers() {
 
             <tr>
                 <td>
-                    <?php bpec_field_label( 'EventEndDate', __( 'End Date / Time:', 'buddypress-for-events-calendar' ) ); ?>
+                    <?php bpec_field_label( 'EventEndDate', __( 'End Date / Time:', 'bp-events-calendar' ) ); ?>
                 </td>
                 <td>
                     <input autocomplete="off" type="text" id="EventEndDate" class="tribe-datepicker" name="EventEndDate" value="<?php echo esc_attr( $end_date ); ?>" />
-                    <span class="helper-text hide-if-js"><?php esc_html_e( 'YYYY-MM-DD', 'buddypress-for-events-calendar' ); ?></span>
+                    <span class="helper-text hide-if-js"><?php esc_html_e( 'YYYY-MM-DD', 'bp-events-calendar' ); ?></span>
 			<span class="timeofdayoptions">
 				@ <?php echo bpec_event_end_time_selector(); ?>
 			</span><!-- .timeofdayoptions -->
@@ -415,7 +415,7 @@ function bpec_template_datepickers() {
             <?php if ( class_exists( 'Tribe__Events__Timezones' ) ): ?>
                 <tr>
                     <td>
-                        <?php bpec_field_label( 'EventTimezone', __( 'Timezone:', 'buddypress-for-events-calendar' ) ); ?>
+                        <?php bpec_field_label( 'EventTimezone', __( 'Timezone:', 'bp-events-calendar' ) ); ?>
                     </td>
                     <td>
                         <select name="EventTimezone" id="event-timezone" class="chosen">
@@ -453,7 +453,7 @@ function bpec_template_venue() {
             <thead> <tr>
                 <td colspan="2" class="tribe_sectionheader">
                     <h4> <label class=""> <?php
-                            printf( __( '%s Details', 'buddypress-for-events-calendar' ), tribe_get_venue_label_singular() );
+                            printf( __( '%s Details', 'bp-events-calendar' ), tribe_get_venue_label_singular() );
                             ?> </label> </h4>
                 </td><!-- .tribe_sectionheader -->
             </tr> </thead>
@@ -487,7 +487,7 @@ function bpec_template_organizer() {
             <thead> <tr>
                 <td colspan="2" class="tribe_sectionheader">
                     <h4> <label class=""> <?php
-                            printf( __( '%s Details', 'buddypress-for-events-calendar' ), tribe_get_organizer_label_singular() );
+                            printf( __( '%s Details', 'bp-events-calendar' ), tribe_get_organizer_label_singular() );
                             ?> </label> </h4>
                 </td><!-- .tribe_sectionheader -->
             </tr> </thead>
@@ -528,13 +528,13 @@ function bpec_template_website() {
 
             <tr>
                 <td colspan="2" class="tribe_sectionheader">
-                    <h4><?php printf( __( '%s Website', 'buddypress-for-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
+                    <h4><?php printf( __( '%s Website', 'bp-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
                 </td><!-- .tribe_sectionheader -->
             </tr>
 
             <tr class="website">
                 <td>
-                    <?php bpec_field_label( 'EventURL', __( 'URL:', 'buddypress-for-events-calendar' ) ); ?>
+                    <?php bpec_field_label( 'EventURL', __( 'URL:', 'bp-events-calendar' ) ); ?>
                 </td>
                 <td>
                     <input type="text" id="EventURL" name="EventURL" size="25" value="<?php echo esc_url( $event_url ); ?>" />
@@ -589,7 +589,7 @@ function bpec_template_ticket() {
             ?>
             <tr>
                 <td colspan="2" class="tribe_sectionheader updated">
-                    <p class="error-message"><?php esc_html_e( 'This event was created using Community Events. Are you sure you want to sell tickets for it?', 'buddypress-for-events-calendar' ); ?></p>
+                    <p class="error-message"><?php esc_html_e( 'This event was created using Community Events. Are you sure you want to sell tickets for it?', 'bp-events-calendar' ); ?></p>
                 </td>
             </tr>
             <?php
@@ -600,11 +600,11 @@ function bpec_template_ticket() {
                 <table class="eventtable ticket_list eventForm">
                     <tr class="tribe-tickets-image-upload">
                         <td>
-                            <?php esc_html_e( 'Upload image for the ticket header.', 'buddypress-for-events-calendar' ); ?>
-                            <p class="description"><?php esc_html_e( 'The maximum image size in the email will be 580px wide by any height, and then scaled for mobile. If you would like "retina" support use an image sized to 1160px wide.', 'buddypress-for-events-calendar' ); ?></p>
+                            <?php esc_html_e( 'Upload image for the ticket header.', 'bp-events-calendar' ); ?>
+                            <p class="description"><?php esc_html_e( 'The maximum image size in the email will be 580px wide by any height, and then scaled for mobile. If you would like "retina" support use an image sized to 1160px wide.', 'bp-events-calendar' ); ?></p>
                         </td>
                         <td>
-                            <input type="button" class="button" name="tribe_ticket_header_image" id="tribe_ticket_header_image" value="<?php esc_html_e( 'Select an Image', 'buddypress-for-events-calendar' ); ?>" />
+                            <input type="button" class="button" name="tribe_ticket_header_image" id="tribe_ticket_header_image" value="<?php esc_html_e( 'Select an Image', 'bp-events-calendar' ); ?>" />
                         </td>
                     </tr>
                     <tr class="tribe-tickets-image-preview">
@@ -612,7 +612,7 @@ function bpec_template_ticket() {
                             <div class="tribe_preview" id="tribe_ticket_header_preview">
                                 <?php echo $header_img; ?>
                             </div>
-                            <p class="description"><a href="#" id="tribe_ticket_header_remove"><?php esc_html_e( 'Remove', 'buddypress-for-events-calendar' ); ?></a></p>
+                            <p class="description"><a href="#" id="tribe_ticket_header_remove"><?php esc_html_e( 'Remove', 'bp-events-calendar' ); ?></a></p>
 
                             <input type="hidden" id="tribe_ticket_header_image_id" name="tribe_ticket_header_image_id" value="<?php echo esc_attr( $header_id ); ?>" />
                         </td>
@@ -627,7 +627,7 @@ function bpec_template_ticket() {
                         <tr>
                             <td>
                                 <label for="tribe-tickets-enable-global-stock">
-                                    <?php esc_html_e( 'Enable global stock', 'buddypress-for-events-calendar' ); ?>
+                                    <?php esc_html_e( 'Enable global stock', 'bp-events-calendar' ); ?>
                                 </label>
                             </td>
                             <td>
@@ -637,13 +637,13 @@ function bpec_template_ticket() {
                         <tr id="tribe-tickets-global-stock-level">
                             <td>
                                 <label for="tribe-tickets-global-stock">
-                                    <?php esc_html_e( 'Global stock level', 'buddypress-for-events-calendar' ); ?>
+                                    <?php esc_html_e( 'Global stock level', 'bp-events-calendar' ); ?>
                                 </label>
                             </td>
                             <td>
                                 <input type="number" name="tribe-tickets-global-stock" id="tribe-tickets-global-stock" value="<?php echo esc_attr( $global_stock->get_stock_level() ); ?>" />
 							<span class="tribe-tickets-global-sales">
-								<?php echo esc_html( sprintf( _n( '(%s sold)', '(%s sold)', $global_stock->tickets_sold(), 'buddypress-for-events-calendar' ), $global_stock->tickets_sold() ) ); ?>
+								<?php echo esc_html( sprintf( _n( '(%s sold)', '(%s sold)', $global_stock->tickets_sold(), 'bp-events-calendar' ), $global_stock->tickets_sold() ) ); ?>
 							</span>
                             </td>
                         </tr>
@@ -670,7 +670,7 @@ function bpec_template_ticket() {
         <tr>
             <td colspan="2" class="tribe_sectionheader">
                 <a href="#" class="button-secondary"
-                   id="ticket_form_toggle"><?php esc_html_e( 'Add new ticket', 'buddypress-for-events-calendar' ); ?></a>
+                   id="ticket_form_toggle"><?php esc_html_e( 'Add new ticket', 'bp-events-calendar' ); ?></a>
             </td>
         </tr>
         <tr id="ticket_form" class="ticket_form">
@@ -680,13 +680,13 @@ function bpec_template_ticket() {
 
                     <tr>
                         <td colspan="2">
-                            <h4 class="ticket_form_title_add"><?php esc_html_e( 'Add new ticket', 'buddypress-for-events-calendar' ); ?></h4>
-                            <h4 class="ticket_form_title_edit"><?php esc_html_e( 'Edit ticket', 'buddypress-for-events-calendar' ); ?></h4>
+                            <h4 class="ticket_form_title_add"><?php esc_html_e( 'Add new ticket', 'bp-events-calendar' ); ?></h4>
+                            <h4 class="ticket_form_title_edit"><?php esc_html_e( 'Edit ticket', 'bp-events-calendar' ); ?></h4>
                         </td>
                     </tr>
 
                     <tr class="ticket">
-                        <td width="20%"><label for="ticket_provider"><?php esc_html_e( 'Sell using:', 'buddypress-for-events-calendar' ); ?></label></td>
+                        <td width="20%"><label for="ticket_provider"><?php esc_html_e( 'Sell using:', 'bp-events-calendar' ); ?></label></td>
                         <td>
                             <?php
                             $checked = true;
@@ -703,14 +703,14 @@ function bpec_template_ticket() {
                         </td>
                     </tr>
                     <tr class="ticket">
-                        <td><label for="ticket_name"><?php esc_html_e( 'Ticket Name:', 'buddypress-for-events-calendar' ); ?></label></td>
+                        <td><label for="ticket_name"><?php esc_html_e( 'Ticket Name:', 'bp-events-calendar' ); ?></label></td>
                         <td>
                             <input type='text' id='ticket_name' name='ticket_name' class="ticket_field" size='25' value='' />
                         </td>
                     </tr>
                     <tr class="ticket">
                         <td><label
-                                for="ticket_description"><?php esc_html_e( 'Ticket Description:', 'buddypress-for-events-calendar' ); ?></label>
+                                for="ticket_description"><?php esc_html_e( 'Ticket Description:', 'bp-events-calendar' ); ?></label>
                         </td>
                         <td>
 						<textarea rows="5" cols="40" name="ticket_description" class="ticket_field"
@@ -719,7 +719,7 @@ function bpec_template_ticket() {
                     </tr>
                     <tr class="ticket">
                         <td><label
-                                for="ticket_start_date"><?php esc_html_e( 'Start sale:', 'buddypress-for-events-calendar' ); ?></label>
+                                for="ticket_start_date"><?php esc_html_e( 'Start sale:', 'bp-events-calendar' ); ?></label>
                         </td>
                         <td>
                             <input
@@ -750,7 +750,7 @@ function bpec_template_ticket() {
 
                     <tr class="ticket">
                         <td valign="top"><label
-                                for="ticket_end_date"><?php esc_html_e( 'End sale:', 'buddypress-for-events-calendar' ); ?></label>
+                                for="ticket_end_date"><?php esc_html_e( 'End sale:', 'bp-events-calendar' ); ?></label>
                         </td>
                         <td valign="top">
                             <input autocomplete="off" type="text" class="ticket_field" size='10' name="ticket_end_date"
@@ -788,8 +788,8 @@ function bpec_template_ticket() {
                         <td></td>
                         <td>
                             <input type="hidden" name="ticket_id" id="ticket_id" class="ticket_field" value="" />
-                            <input type="button" id="ticket_form_save" name="ticket_form_save" value="<?php esc_attr_e( 'Save this ticket', 'buddypress-for-events-calendar' ); ?>" class="button-primary" />
-                            <input type="button" id="ticket_form_cancel" name="ticket_form_cancel" value="<?php esc_attr_e( 'Cancel', 'buddypress-for-events-calendar' ); ?>" class="button-secondary" />
+                            <input type="button" id="ticket_form_save" name="ticket_form_save" value="<?php esc_attr_e( 'Save this ticket', 'bp-events-calendar' ); ?>" class="button-primary" />
+                            <input type="button" id="ticket_form_cancel" name="ticket_form_cancel" value="<?php esc_attr_e( 'Cancel', 'bp-events-calendar' ); ?>" class="button-secondary" />
                         </td>
                     </tr>
                 </table>
@@ -821,7 +821,7 @@ function bpec_template_custom() {
 
             <tr>
                 <td colspan="2" class="tribe_sectionheader">
-                    <h4><?php esc_html_e( 'Additional Fields', 'buddypress-for-events-calendar' ); ?></h4>
+                    <h4><?php esc_html_e( 'Additional Fields', 'bp-events-calendar' ); ?></h4>
                 </td>
             </tr><!-- .snp-sectionheader -->
 
@@ -838,7 +838,7 @@ function bpec_template_custom() {
                 ?>
                 <tr>
                     <td>
-                        <?php bpec_field_label( $customField['name'], sprintf( _x( '%s:', 'custom field label', 'buddypress-for-events-calendar' ), $customField['label'] ) ); ?>
+                        <?php bpec_field_label( $customField['name'], sprintf( _x( '%s:', 'custom field label', 'bp-events-calendar' ), $customField['label'] ) ); ?>
                     </td>
                     <td>
                         <?php
@@ -856,7 +856,7 @@ function bpec_template_custom() {
                             <div>
                                 <label>
                                     <input type="radio" name="<?php echo esc_attr( $customField['name'] ) ?>" value="" <?php checked( trim( $val ), '' ) ?>/>
-                                    <?php esc_html_e( 'None', 'buddypress-for-events-calendar' ); ?>
+                                    <?php esc_html_e( 'None', 'bp-events-calendar' ); ?>
                                 </label>
                             </div>
                             <?php
@@ -885,7 +885,7 @@ function bpec_template_custom() {
                         } elseif ( $customField['type'] == 'dropdown' ) {
                             ?>
                             <select name="<?php echo esc_attr( $customField['name'] ); ?>">
-                                <option value="" <?php selected( trim( $val ), '' ) ?>><?php esc_html_e( 'None', 'buddypress-for-events-calendar' ); ?></option>
+                                <option value="" <?php selected( trim( $val ), '' ) ?>><?php esc_html_e( 'None', 'bp-events-calendar' ); ?></option>
                                 <?php
                                 $options = explode( "\n", $customField['values'] );
                                 foreach ( $options as $option ) {
@@ -935,12 +935,12 @@ function bpec_template_cost() {
             <table class="tribe-community-event-info" cellspacing="0" cellpadding="0">
                 <tr>
                     <td colspan="2" class="tribe_sectionheader">
-                        <h4><?php printf( esc_html__( '%s Cost', 'buddypress-for-events-calendar' ), $events_label_singular ); ?></h4>
+                        <h4><?php printf( esc_html__( '%s Cost', 'bp-events-calendar' ), $events_label_singular ); ?></h4>
                     </td><!-- .tribe_sectionheader -->
                 </tr>
                 <tr>
                     <td>
-                        <?php bpec_field_label( 'EventCurrencySymbol', __( 'Currency Symbol:', 'buddypress-for-events-calendar' ) ); ?>
+                        <?php bpec_field_label( 'EventCurrencySymbol', __( 'Currency Symbol:', 'bp-events-calendar' ) ); ?>
                     </td>
                     <td>
                         <input type="text" id="EventCurrencySymbol" name="EventCurrencySymbol" size="2" value="<?php echo esc_attr( isset( $_POST['EventCurrencySymbol'] ) ? $_POST['EventCurrencySymbol'] : bpec_currency_symbol_field() ); ?>" />
@@ -956,22 +956,22 @@ function bpec_template_cost() {
                                 $suffix = false;
                             }
                             ?>
-                            <option value="prefix"> <?php _ex( 'Before cost', 'Currency symbol position', 'buddypress-for-events-calendar' ) ?> </option>
+                            <option value="prefix"> <?php _ex( 'Before cost', 'Currency symbol position', 'bp-events-calendar' ) ?> </option>
                             <option value="suffix"<?php if ( $suffix ) {
                                 echo ' selected="selected"';
-                            } ?>><?php _ex( 'After cost', 'Currency symbol position', 'buddypress-for-events-calendar' ) ?></option>
+                            } ?>><?php _ex( 'After cost', 'Currency symbol position', 'bp-events-calendar' ) ?></option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <?php bpec_field_label( 'EventCost', __( 'Cost:', 'buddypress-for-events-calendar' ) ); ?>
+                        <?php bpec_field_label( 'EventCost', __( 'Cost:', 'bp-events-calendar' ) ); ?>
                     </td>
                     <td><input type="text" id="EventCost" name="EventCost" size="6" value="<?php echo esc_attr( isset( $_POST['EventCost'] ) ? $_POST['EventCost'] : tribe_get_cost() ); ?>" /></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><small><?php printf( __( 'Leave blank to hide the field. Enter a 0 for %s that are free.', 'buddypress-for-events-calendar' ), $events_label_plural_lowercase ); ?></small></td>
+                    <td><small><?php printf( __( 'Leave blank to hide the field. Enter a 0 for %s that are free.', 'bp-events-calendar' ), $events_label_plural_lowercase ); ?></small></td>
                 </tr>
             </table><!-- #event_cost -->
         </div><!-- .tribe-events-community-details -->
@@ -1000,17 +1000,17 @@ function bpec_template_group() {
 
             <tr>
                 <td colspan="2" class="tribe_sectionheader">
-                    <h4><?php printf( __( '%s Group', 'buddypress-for-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
+                    <h4><?php printf( __( '%s Group', 'bp-events-calendar' ), tribe_get_event_label_singular() ); ?></h4>
                 </td><!-- .tribe_sectionheader -->
             </tr>
 
             <tr class="group">
                 <td>
-                    <?php bpec_field_label( 'EventGroup', __( 'Group:', 'buddypress-for-events-calendar' ) ); ?>
+                    <?php bpec_field_label( 'EventGroup', __( 'Group:', 'bp-events-calendar' ) ); ?>
                 </td>
                 <td>
                     <select name="event_group_id" id="event-group">
-                        <option value="-1"><?php _e( '--Select Group --', 'buddypress-for-events-calendar' ); ?></option>
+                        <option value="-1"><?php _e( '--Select Group --', 'bp-events-calendar' ); ?></option>
                         <?php foreach ( $groups_arr[ 'groups' ] as $group ): ?>
                             <option value="<?php echo $group->id; ?>" <?php echo (( $event_group_id == $group->id )) ? 'selected' : ''; ?>><?php _e( $group->name, '' ); ?></option>
                         <?php endforeach; ?>
@@ -1070,7 +1070,7 @@ function bpec_template_event_row() {
             if ( $canView ) {
                 ?>
                 <span class="view">
-									<a href="<?php echo esc_url( tribe_get_event_link( $post ) ); ?>"><?php esc_html_e( 'View', 'buddypress-for-events-calendar' ); ?></a>
+									<a href="<?php echo esc_url( tribe_get_event_link( $post ) ); ?>"><?php esc_html_e( 'View', 'bp-events-calendar' ); ?></a>
 								</span>
                 <?php
             }
@@ -1079,7 +1079,7 @@ function bpec_template_event_row() {
                 echo ' | ';
                 ?>
                 <span class="view">
-									<a href="<?php echo bpec_get_add_event_url( $post->ID ); ?>"><?php esc_html_e( 'Edit', 'buddypress-for-events-calendar' ); ?></a>
+									<a href="<?php echo bpec_get_add_event_url( $post->ID ); ?>"><?php esc_html_e( 'Edit', 'bp-events-calendar' ); ?></a>
 								</span>
                 <?php
             }
@@ -1088,7 +1088,7 @@ function bpec_template_event_row() {
                 echo ' | ';
                 ?>
                 <span class="attendees">
-                    <a href="<?php echo bpec_get_event_attendees_url( $post->ID ); ?>"><?php esc_html_e( 'Attendees', 'buddypress-for-events-calendar' ); ?></a>
+                    <a href="<?php echo bpec_get_event_attendees_url( $post->ID ); ?>"><?php esc_html_e( 'Attendees', 'bp-events-calendar' ); ?></a>
                 </span>
                 <?php
             }
@@ -1097,7 +1097,7 @@ function bpec_template_event_row() {
                 echo ' | ';
                 ?>
                 <span class="orders">
-                    <a href="<?php echo bpec_get_event_orders_url( $post->ID ); ?>"><?php esc_html_e( 'Orders', 'buddypress-for-events-calendar' ); ?></a>
+                    <a href="<?php echo bpec_get_event_orders_url( $post->ID ); ?>"><?php esc_html_e( 'Orders', 'bp-events-calendar' ); ?></a>
                 </span>
                 <?php
             }
@@ -1134,9 +1134,9 @@ function bpec_template_event_row() {
         <td>
             <?php
             if ( tribe_is_recurring_event( $post->ID ) ) {
-                esc_html_e( 'Yes', 'buddypress-for-events-calendar' );
+                esc_html_e( 'Yes', 'bp-events-calendar' );
             } else {
-                esc_html_e( 'No', 'buddypress-for-events-calendar' );
+                esc_html_e( 'No', 'bp-events-calendar' );
             }
             ?>
         </td>
@@ -1276,7 +1276,7 @@ function bpec_event_attendees_list_row( $item, $event ) {
             ) {
                 $button_template = '<a href="%s" class="button-secondary tickets-checkin">%s</a>';
 
-                return sprintf( $button_template, $item['order_id_link_src'], __( 'View order', 'buddypress-for-events-calendar' ) );
+                return sprintf( $button_template, $item['order_id_link_src'], __( 'View order', 'bp-events-calendar' ) );
             }
 
             $button_classes = ! empty( $item['order_status'] ) && in_array( $item['order_status'], $check_in_stati ) ?
@@ -1288,7 +1288,7 @@ function bpec_event_attendees_list_row( $item, $event ) {
                     esc_attr( $item['attendee_id'] ),
                     esc_attr( $item['provider'] ),
                     esc_attr( $button_classes ),
-                    esc_html__( 'Check In', 'buddypress-for-events-calendar' )
+                    esc_html__( 'Check In', 'bp-events-calendar' )
                 );
                 $uncheckin = sprintf(
                     '<span class="delete"><a href="#" data-attendee-id="%d" data-provider="%s" class="tickets_uncheckin">%s</a></span>',
@@ -1296,8 +1296,8 @@ function bpec_event_attendees_list_row( $item, $event ) {
                     esc_attr( $item['provider'] ),
                     sprintf(
                         '<div>%1$s</div><div>%2$s</div>',
-                        esc_html__( 'Undo', 'buddypress-for-events-calendar' ),
-                        esc_html__( 'Check In', 'buddypress-for-events-calendar' )
+                        esc_html__( 'Undo', 'bp-events-calendar' ),
+                        esc_html__( 'Check In', 'bp-events-calendar' )
                     )
                 );
             } else {
@@ -1308,7 +1308,7 @@ function bpec_event_attendees_list_row( $item, $event ) {
                     esc_attr( $this->event->ID ),
                     esc_attr( $item['provider'] ),
                     esc_attr( $button_classes ),
-                    esc_html__( 'Check In', 'buddypress-for-events-calendar' )
+                    esc_html__( 'Check In', 'bp-events-calendar' )
                 );
                 $uncheckin = sprintf(
                     '<span class="delete"><a href="#" data-attendee-id="%d" data-event-id="%d" data-provider="%s" class="tickets_uncheckin">%s</a></span>',
@@ -1316,8 +1316,8 @@ function bpec_event_attendees_list_row( $item, $event ) {
                     esc_attr( $this->event->ID ), esc_attr( $item['provider'] ),
                     sprintf(
                         '<div>%1$s</div><div>%2$s</div>',
-                        esc_html__( 'Undo', 'buddypress-for-events-calendar' ),
-                        esc_html__( 'Check In', 'buddypress-for-events-calendar' )
+                        esc_html__( 'Undo', 'bp-events-calendar' ),
+                        esc_html__( 'Check In', 'bp-events-calendar' )
                     )
                 );
             }
@@ -1504,11 +1504,11 @@ function bpec_group_join_event_button() {
 
         <button class="bpec-join-event-button button">
             <?php if ( 'interested' == $status ): ?>
-                <span><?php _e( 'Interested', 'buddypress-for-events-calendar' ) ?></span>
+                <span><?php _e( 'Interested', 'bp-events-calendar' ) ?></span>
             <?php elseif ( 'going' == $status ): ?>
-                <span><?php _e( 'Going', 'buddypress-for-events-calendar' ) ?></span>
+                <span><?php _e( 'Going', 'bp-events-calendar' ) ?></span>
             <?php else: ?>
-                <span><?php _e( 'Join', 'buddypress-for-events-calendar' ) ?></span>
+                <span><?php _e( 'Join', 'bp-events-calendar' ) ?></span>
             <?php endif; ?>
         </button>
 
@@ -1518,14 +1518,14 @@ function bpec_group_join_event_button() {
                 <li data-eaction="going" data-_wpnonce="<?php echo wp_create_nonce( 'event_join' ) ?>">
                     <a href="#">
                         <svg aria-hidden="true" class="octicon octicon-check drop-element-item-icon <?php echo $status != 'going' ? 'hide' : '' ?>" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
-                        <span><?php _e('Going', 'buddypress-for-events-calendar' ) ?></span>
+                        <span><?php _e('Going', 'bp-events-calendar' ) ?></span>
                     </a>
                 </li>
 
                 <li data-eaction="interested" data-_wpnonce="<?php echo wp_create_nonce( 'event_join' ) ?>">
                     <a href="#">
                         <svg aria-hidden="true" class="octicon octicon-check drop-element-item-icon <?php echo $status != 'interested' ? 'hide' : '' ?>" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
-                        <span><?php _e( 'Interested', 'buddypress-for-events-calendar' ) ?></span>
+                        <span><?php _e( 'Interested', 'bp-events-calendar' ) ?></span>
                     </a>
                 </li>
 
@@ -1533,7 +1533,7 @@ function bpec_group_join_event_button() {
                 <div class="drop-element-divider"></div>
                 <li data-eaction="delete" data-_wpnonce="<?php echo wp_create_nonce( 'event_join' ) ?>">
                     <a href="#" >
-                        <span><?php _e( 'Not Interested', 'buddypress-for-events-calendar' ) ?></span>
+                        <span><?php _e( 'Not Interested', 'bp-events-calendar' ) ?></span>
                     </a>
                 </li>
 
@@ -1541,7 +1541,7 @@ function bpec_group_join_event_button() {
                 <div class="drop-element-divider"></div>
                 <li data-eaction="delete" data-_wpnonce="<?php echo wp_create_nonce( 'event_join' ) ?>">
                     <a href="#" >
-                       <span class="drop-element-item-text"><?php _e( 'Not Going', 'buddypress-for-events-calendar' ) ?></span>
+                       <span class="drop-element-item-text"><?php _e( 'Not Going', 'bp-events-calendar' ) ?></span>
                     </a>
                 </li>
                 <?php else: ?>
@@ -1571,7 +1571,7 @@ function bpec_event_guests() {
     ?>
     <div class="event-guests meta">
         <span>
-            <a href="#guests-popup" class="bpec-guests-popup-btn" data-eid="<?php echo $post->ID ?>" data-gid="<?php echo $groups_template->group->id ?>" data-_wpnonce="<?php echo wp_create_nonce('guests_list') ?>"><?php printf( _n( '%1$s Guest', '%1$s Guests', $count, 'buddypress-for-events-calendar' ), $count ); ?></a>
+            <a href="#guests-popup" class="bpec-guests-popup-btn" data-eid="<?php echo $post->ID ?>" data-gid="<?php echo $groups_template->group->id ?>" data-_wpnonce="<?php echo wp_create_nonce('guests_list') ?>"><?php printf( _n( '%1$s Guest', '%1$s Guests', $count, 'bp-events-calendar' ), $count ); ?></a>
         </span>
     </div>
     <?php
@@ -1598,8 +1598,8 @@ function bpec_event_guests_list() {
 function bpec_guests_popup_inner() {
     ?>
     <ul class="tabs-menu">
-        <li class="current"><a href="#tab-going"><?php _e( 'Going', 'buddypress-for-events-calendar' ) ?></a></li>
-        <li><a href="#tab-interested"><?php _e( 'Interested', 'buddypress-for-events-calendar' ) ?></a></li>
+        <li class="current"><a href="#tab-going"><?php _e( 'Going', 'bp-events-calendar' ) ?></a></li>
+        <li><a href="#tab-interested"><?php _e( 'Interested', 'bp-events-calendar' ) ?></a></li>
     </ul>
     <div class="tab">
         <div id="tab-going" class="tab-content">
