@@ -1,4 +1,4 @@
-# BuddyPress for Events Calendar #
+# BP Events Calendar #
 **Contributors:** [WPdrift](https://profiles.wordpress.org/wpdrift), [upnrunn](https://profiles.wordpress.org/upnrunn), [Kishores](https://profiles.wordpress.org/kishores), [Mainul Hassan Main](https://profiles.wordpress.org/shamimmoeen)\
 **Tags:** buddypress, events, calendar, events-calendar, community-events\
 **Requires at least:** 4.0\
@@ -12,7 +12,7 @@ The Modern Tribe's Events Calendar add-on that integrated into BuddyPress, and a
 
 ## Description ##
 
-BuddyPress for Events Calendar is a professional quality events calendar plugin, that allow users to post events directly from their profile.
+BuddyPress Events Calendar is a professional quality events calendar plugin, that allow users to post events directly from their profile.
 
 BuddyPress Events Calendar seamlessly integrates Modern Tribe’s Events Calendar into BuddyPress. This means you have all of the same great features from Modern Tribe’s Calendar bundled together for you in the BuddyPress backend.
 
@@ -27,7 +27,7 @@ BuddyPress Events Calendar seamlessly integrates Modern Tribe’s Events Calenda
 
 ### Requirements ###
 
-BuddyPress for Events Calendar plugin needs the following plugins to be installed:
+BuddyPress Events Calendar plugin needs the following plugins to be installed:
 
 * <a href="https://wordpress.org/plugins/buddypress/" target="_blank">BuddyPress</a>
 * <a href="https://wordpress.org/plugins/the-events-calendar/" target="_blank">The Events Calendar</a>
@@ -38,7 +38,7 @@ BuddyPress for Events Calendar plugin needs the following plugins to be installe
 
 Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t even need to leave your web browser. To do an automatic install, log in to your WordPress admin panel, navigate to the Plugins menu and click Add New.
 
-In the search field type “BuddyPress for Events Calendar” and click Search Plugins. Once you’ve found the plugin you can view details about it such as the point release, rating, and description. Most importantly, of course, you can install it by clicking Install Now.
+In the search field type “BuddyPress Events Calendar” and click Search Plugins. Once you’ve found the plugin you can view details about it such as the point release, rating, and description. Most importantly, of course, you can install it by clicking Install Now.
 
 ### Manual installation ###
 

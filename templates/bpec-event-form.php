@@ -60,9 +60,9 @@ do_action( 'bpec_before_event_form' ); ?>
 		<input type="submit" id="post" class="button submit events-community-submit" value="<?php
 
 			if ( isset( $tribe_event_id ) && $tribe_event_id ) {
-				echo apply_filters( 'tribe_ce_event_update_button_text', sprintf( __( 'Update %s', 'buddypress-for-events-calendar' ), $events_label_singular ) );
+				echo apply_filters( 'tribe_ce_event_update_button_text', sprintf( __( 'Update %s', 'bp-events-calendar' ), $events_label_singular ) );
 			} else {
-				echo apply_filters( 'tribe_ce_event_submit_button_text', sprintf( __( 'Save %s', 'buddypress-for-events-calendar' ), $events_label_singular ) );
+				echo apply_filters( 'tribe_ce_event_submit_button_text', sprintf( __( 'Save %s', 'bp-events-calendar' ), $events_label_singular ) );
 			}
 
 			?>" name="community-event" />

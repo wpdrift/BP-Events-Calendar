@@ -27,7 +27,7 @@ $_GET['event_id'] = $event_id; //@todo: do something here
 
 <?php // list pagination
 if ( empty( $event_attendees ) ) {
-    echo ( sprintf( __( 'There are %s no attendees yet.', 'buddypress-for-events-calendar' ), $events_label_plural_lowercase ) );
+    echo ( sprintf( __( 'There are %s no attendees yet.', 'bp-events-calendar' ), $events_label_plural_lowercase ) );
 } ?>
 
 <div class="bp-events tribe-attendees-page">
@@ -48,7 +48,7 @@ if ( empty( $event_attendees ) ) {
                 ?>
 
                 <div class="welcome-panel-column welcome-panel-first">
-                    <h3><?php echo esc_html_x( 'Event Details', 'attendee screen summary', 'buddypress-for-events-calendar' ); ?></h3>
+                    <h3><?php echo esc_html_x( 'Event Details', 'attendee screen summary', 'bp-events-calendar' ); ?></h3>
 
                     <ul>
                         <?php
@@ -86,7 +86,7 @@ if ( empty( $event_attendees ) ) {
 
                 </div>
                 <div class="welcome-panel-column welcome-panel-middle">
-                    <h3><?php echo esc_html_x( 'Attendees By Ticket', 'attendee screen summary', 'buddypress-for-events-calendar' ); ?></h3>
+                    <h3><?php echo esc_html_x( 'Attendees By Ticket', 'attendee screen summary', 'bp-events-calendar' ); ?></h3>
                     <?php do_action( 'tribe_events_tickets_attendees_ticket_sales_top', $event_id ); ?>
 
                     <ul>
@@ -132,11 +132,11 @@ if ( empty( $event_attendees ) ) {
 
         <thead id="attendees-display-headers">
             <tr>
-                <th><?php esc_html_e( 'Ticket', 'buddypress-for-events-calendar' ); ?></th>
-                <th><?php esc_html_e( 'Primary Information', 'buddypress-for-events-calendar' ); ?></th>
-                <th><?php esc_html_e( 'Security Code', 'buddypress-for-events-calendar' ); ?></th>
-                <th><?php esc_html_e( 'Status', 'buddypress-for-events-calendar' ); ?></th>
-                <th><?php esc_html_e( 'Check in', 'buddypress-for-events-calendar' ); ?></th>
+                <th><?php esc_html_e( 'Ticket', 'bp-events-calendar' ); ?></th>
+                <th><?php esc_html_e( 'Primary Information', 'bp-events-calendar' ); ?></th>
+                <th><?php esc_html_e( 'Security Code', 'bp-events-calendar' ); ?></th>
+                <th><?php esc_html_e( 'Status', 'bp-events-calendar' ); ?></th>
+                <th><?php esc_html_e( 'Check in', 'bp-events-calendar' ); ?></th>
             </tr>
         </thead>
 

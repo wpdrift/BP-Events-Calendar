@@ -102,7 +102,7 @@ $total_completed += absint( $total_sold ) - absint( $total_pending );
 
 <?php // list pagination
 if ( empty( $event_orders ) ) {
-    echo ( sprintf( __( 'There are %s no orders yet.', 'buddypress-for-events-calendar' ), $events_label_plural_lowercase ) );
+    echo ( sprintf( __( 'There are %s no orders yet.', 'bp-events-calendar' ), $events_label_plural_lowercase ) );
 } ?>
 
 <div class="bp-events tribe-orders-page">
@@ -112,7 +112,7 @@ if ( empty( $event_orders ) ) {
             <div class="welcome-panel-column-container">
 
                 <div class="welcome-panel-column welcome-panel-first">
-                    <h3><?php esc_html_e( 'Event Details', 'buddypress-for-events-calendar' ); ?></h3>
+                    <h3><?php esc_html_e( 'Event Details', 'bp-events-calendar' ); ?></h3>
                     <ul>
                         <?php
                         /**
@@ -143,19 +143,19 @@ if ( empty( $event_orders ) ) {
 
                 </div>
                 <div class="welcome-panel-column welcome-panel-middle">
-                    <h3><?php esc_html_e( 'Sales by Ticket', 'buddypress-for-events-calendar' ); ?></h3>
+                    <h3><?php esc_html_e( 'Sales by Ticket', 'bp-events-calendar' ); ?></h3>
 
                     <div class="tribe-event-meta tribe-event-meta-tickets-sold">
-                        <strong><?php echo esc_html__( 'Tickets sold:', 'buddypress-for-events-calendar' ); ?></strong>
+                        <strong><?php echo esc_html__( 'Tickets sold:', 'bp-events-calendar' ); ?></strong>
                         <?php echo absint( $total_sold ); ?>
                         <?php if ( $total_pending > 0 ) : ?>
                             <div id="sales_breakdown_wrapper" class="tribe-event-meta-note">
                                 <div>
-                                    <?php esc_html_e( 'Completed:', 'buddypress-for-events-calendar' ); ?>
+                                    <?php esc_html_e( 'Completed:', 'bp-events-calendar' ); ?>
                                     <span id="total_issued"><?php echo esc_html( $total_completed ); ?></span>
                                 </div>
                                 <div>
-                                    <?php esc_html_e( 'Processing:', 'buddypress-for-events-calendar' ); ?>
+                                    <?php esc_html_e( 'Processing:', 'bp-events-calendar' ); ?>
                                     <span id="total_pending"><?php echo esc_html( $total_pending ); ?></span>
                                 </div>
                             </div>
@@ -174,13 +174,13 @@ if ( empty( $event_orders ) ) {
                         $sold_message = '';
 
                         if ( $ticket_sold['pending'] > 0 ) {
-                            $pending = sprintf( _n( '(%d awaiting review)', '(%d awaiting review)', $ticket_sold['pending'], 'buddypress-for-events-calendar' ), (int) $ticket_sold['pending'] );
+                            $pending = sprintf( _n( '(%d awaiting review)', '(%d awaiting review)', $ticket_sold['pending'], 'bp-events-calendar' ), (int) $ticket_sold['pending'] );
                         }
 
                         if ( ! $ticket_sold['has_stock'] ) {
-                            $sold_message = sprintf( __( 'Sold %d %s', 'buddypress-for-events-calendar' ), esc_html( $ticket_sold['sold'] ), $pending );
+                            $sold_message = sprintf( __( 'Sold %d %s', 'bp-events-calendar' ), esc_html( $ticket_sold['sold'] ), $pending );
                         } else {
-                            $sold_message = sprintf( __( 'Sold %d of %d %s', 'buddypress-for-events-calendar' ), esc_html( $ticket_sold['sold'] ), esc_html( $ticket_sold['sold'] + absint( $ticket_sold['ticket']->stock() ) ), $pending );
+                            $sold_message = sprintf( __( 'Sold %d of %d %s', 'bp-events-calendar' ), esc_html( $ticket_sold['sold'] ), esc_html( $ticket_sold['sold'] + absint( $ticket_sold['ticket']->stock() ) ), $pending );
                         }
 
                         if ( $ticket_sold['ticket']->price ) {
@@ -194,7 +194,7 @@ if ( empty( $event_orders ) ) {
                             if ( $ticket_sold['sku'] ) {
                                 ?>
                                 <div class="tribe-event-meta-note tribe-event-ticket-sku">
-                                    <?php printf( esc_html__( 'SKU: (%s)', 'buddypress-for-events-calendar' ), esc_html( $ticket_sold['sku'] ) ); ?>
+                                    <?php printf( esc_html__( 'SKU: (%s)', 'bp-events-calendar' ), esc_html( $ticket_sold['sku'] ) ); ?>
                                 </div>
                                 <?php
                             }
@@ -213,27 +213,27 @@ if ( empty( $event_orders ) ) {
                     }; ?>
 
                     <div class="totals-header">
-                        <h3><?php echo sprintf( __( 'Total Sales: %s %s', 'buddypress-for-events-calendar' ), esc_html( tribe_format_currency( number_format( $event_revenue, 2 ), $event_id ) ), $total_sold ); ?></h3>
+                        <h3><?php echo sprintf( __( 'Total Sales: %s %s', 'bp-events-calendar' ), esc_html( tribe_format_currency( number_format( $event_revenue, 2 ), $event_id ) ), $total_sold ); ?></h3>
                     </div>
 
                     <div id="sales_breakdown_wrapper" class="tribe-event-meta-note">
                         <div>
-                            <strong><?php esc_html_e( 'Completed:', 'buddypress-for-events-calendar' ); ?></strong>
+                            <strong><?php esc_html_e( 'Completed:', 'bp-events-calendar' ); ?></strong>
                             <?php echo esc_html( tribe_format_currency( number_format( $tickets_breakdown['wc-completed']['_line_total'], 2 ), $event_id ) ); ?>
                             <span id="total_issued">(<?php echo esc_html( $tickets_breakdown['wc-completed']['_qty'] ); ?>)</span>
                         </div>
                         <div>
-                            <strong><?php esc_html_e( 'Processing:', 'buddypress-for-events-calendar' ); ?></strong>
+                            <strong><?php esc_html_e( 'Processing:', 'bp-events-calendar' ); ?></strong>
                             <?php echo esc_html( tribe_format_currency( number_format( $tickets_breakdown['wc-processing']['_line_total'], 2 ), $event_id ) ); ?>
                             <span id="total_pending">(<?php echo esc_html( $tickets_breakdown['wc-processing']['_qty'] ); ?>)</span>
                         </div>
                         <div>
-                            <strong><?php esc_html_e( 'Pending Payment:', 'buddypress-for-events-calendar' ); ?></strong>
+                            <strong><?php esc_html_e( 'Pending Payment:', 'bp-events-calendar' ); ?></strong>
                             <?php echo esc_html( tribe_format_currency( number_format( $tickets_breakdown['wc-pending']['_line_total'], 2 ), $event_id ) ); ?>
                             <span id="total_pending">(<?php echo esc_html( $tickets_breakdown['wc-pending']['_qty'] ); ?>)</span>
                         </div>
                         <div>
-                            <strong><?php esc_html_e( 'Canceled:', 'buddypress-for-events-calendar' ); ?></strong>
+                            <strong><?php esc_html_e( 'Canceled:', 'bp-events-calendar' ); ?></strong>
                             <?php echo esc_html( tribe_format_currency( number_format( $tickets_breakdown['wc-cancelled']['_line_total'], 2 ), $event_id ) ); ?>
                             <span id="total_issued">(<?php echo esc_html( $tickets_breakdown['wc-cancelled']['_qty'] ); ?>)</span>
                         </div>
@@ -243,11 +243,11 @@ if ( empty( $event_orders ) ) {
                     if ( $event_fees ) {
                         ?>
                         <div class="tribe-event-meta tribe-event-meta-total-ticket-sales">
-                            <strong><?php esc_html_e( 'Total Ticket Sales:', 'buddypress-for-events-calendar' ) ?></strong>
+                            <strong><?php esc_html_e( 'Total Ticket Sales:', 'bp-events-calendar' ) ?></strong>
                             <?php echo esc_html( tribe_format_currency( number_format( $event_sales, 2 ), $event_id ) ); ?>
                         </div>
                         <div class="tribe-event-meta tribe-event-meta-total-site-fees">
-                            <strong><?php esc_html_e( 'Total Site Fees:', 'buddypress-for-events-calendar' ) ?></strong>
+                            <strong><?php esc_html_e( 'Total Site Fees:', 'bp-events-calendar' ) ?></strong>
                             <?php echo esc_html( tribe_format_currency( number_format( $event_fees, 2 ), $event_id ) ); ?>
                             <div class="tribe-event-meta-note">
                                 <?php
@@ -268,14 +268,14 @@ if ( empty( $event_orders ) ) {
 
         <thead id="orders-display-headers">
             <tr>
-                <td><?php esc_html_e( 'Order', 'buddypress-for-events-calendar' ); ?></td>
-                <td><?php esc_html_e( 'Purchaser', 'buddypress-for-events-calendar' ); ?></td>
-                <td><?php esc_html_e( 'Email', 'buddypress-for-events-calendar' ); ?></td>
-                <td><?php esc_html_e( 'Purchased', 'buddypress-for-events-calendar' ); ?></td>
-                <td><?php esc_html_e( 'Address', 'buddypress-for-events-calendar' ); ?></td>
-                <td><?php esc_html_e( 'Date', 'buddypress-for-events-calendar' ); ?></td>
-                <td><?php esc_html_e( 'Status', 'buddypress-for-events-calendar' ); ?></td>
-                <td><?php esc_html_e( 'Total', 'buddypress-for-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Order', 'bp-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Purchaser', 'bp-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Email', 'bp-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Purchased', 'bp-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Address', 'bp-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Date', 'bp-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Status', 'bp-events-calendar' ); ?></td>
+                <td><?php esc_html_e( 'Total', 'bp-events-calendar' ); ?></td>
             </tr>
         </thead>
 

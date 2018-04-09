@@ -427,7 +427,7 @@ function bpec_events_listing_format_activity_action_new_event_post( $action, $ac
 
 	$user_link = bp_core_get_userlink( $activity->user_id );
 
-	$action  = sprintf( __( '%1$s posted a new event, %2$s', 'buddypress-for-events-calendar' ), $user_link, $post_link );
+	$action  = sprintf( __( '%1$s posted a new event, %2$s', 'bp-events-calendar' ), $user_link, $post_link );
 
 
 	// Legacy filter - requires the post object
@@ -459,27 +459,27 @@ function bpec_register_activity_actions() {
 	bp_activity_set_action(
 		'bpec',
 		'new_event_post',
-		__( 'New Event', 'buddypress-for-events-calendar' ),
+		__( 'New Event', 'bp-events-calendar' ),
 		'bpec_events_listing_format_activity_action_new_event_post',
-		__( 'Events', 'buddypress-for-events-calendar' ),
+		__( 'Events', 'bp-events-calendar' ),
 		array( 'activity', 'member' )
 	);
 
     bp_activity_set_action(
         $bp->groups->id,
         'new_event_post',
-        __( 'New Event', 'buddypress-for-events-calendar' ),
+        __( 'New Event', 'bp-events-calendar' ),
         'bpec_events_listing_format_activity_action_new_event_post',
-        __( 'Events', 'buddypress-for-events-calendar' ),
+        __( 'Events', 'bp-events-calendar' ),
         array( 'activity', 'member' )
     );
 
     bp_activity_set_action(
         $bp->groups->id,
         'joined_event',
-        __( 'Joined an event', 'buddypress-for-events-calendar' ),
+        __( 'Joined an event', 'bp-events-calendar' ),
         'bpec_format_activity_action_joined_event',
-        __( 'Event Join', 'buddypress-for-events-calendar' ),
+        __( 'Event Join', 'bp-events-calendar' ),
         array( 'activity', 'group', 'member', 'member_groups' )
     );
 
@@ -912,9 +912,9 @@ function bpec_format_activity_action_joined_event( $action, $activity ) {
     $event_link = '<a href="' . esc_url( get_permalink( $event->ID ) ) . '">' . esc_html( $event->post_title ) . '</a>';
 
     if ( 'interested' == $status ) {
-        $action = sprintf( __( '%1$s interested in join the event, %2$s', 'buddypress-for-events-calendar' ), $user_link, $event_link );
+        $action = sprintf( __( '%1$s interested in join the event, %2$s', 'bp-events-calendar' ), $user_link, $event_link );
     } elseif ( 'going' == $status ) {
-        $action = sprintf( __( '%1$s going to the event, %2$s', 'buddypress-for-events-calendar' ), $user_link, $event_link );
+        $action = sprintf( __( '%1$s going to the event, %2$s', 'bp-events-calendar' ), $user_link, $event_link );
     }
 
     /**
