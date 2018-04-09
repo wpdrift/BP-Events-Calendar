@@ -7,7 +7,7 @@ Version: 1.0.0
 Author: WPdrift
 Author URI: https://wpdrift.com
 Requires at least: 4.4
-Tested up to: 4.7
+Tested up to: 4.9.5
 Text Domain: bp-events-calendar
 Domain Path: /languages/
 
