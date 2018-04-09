@@ -62,12 +62,12 @@ class BP_Events_Component extends BP_Component {
 		// javascript hook
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 
-		//Admin hooks
-		if ( is_admin() ) {
-			//Setting page init
-			$this->settings_page = new BPEC_Settings();
-			add_action( 'admin_menu', array( $this, 'add_menu_page' ), 12 );
-		}
+		// Admin hooks
+		// if ( is_admin() ) {
+		// 	//Setting page init
+		// 	$this->settings_page = new BPEC_Settings();
+		// 	add_action( 'admin_menu', array( $this, 'add_menu_page' ), 12 );
+		// }
 	}
 
 
