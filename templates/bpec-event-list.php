@@ -109,5 +109,5 @@ if ( $my_events->have_posts() ) {
 
 } // if ( $events->have_posts() )
 ?>
-</div><!-- .bp-events ->
+</div><!-- .bp-events -->
 <?php
