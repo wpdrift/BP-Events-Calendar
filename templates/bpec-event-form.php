@@ -74,6 +74,6 @@ do_action( 'bpec_before_event_form' ); ?>
 <?php
 do_action( 'bpec_after_event_form' );
 ?>
-</div><!-- .bp-events ->
+</div><!-- .bp-events -->
 <?php
 
